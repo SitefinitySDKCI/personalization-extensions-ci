@@ -180,7 +180,7 @@ namespace DayOfWeekPersonalization
             PageManager pageManager = PageManager.GetManager();
             if (!pageManager.GetPageNodes().Any(a => a.Name == Installer.pageName))
             {
-                CreatePageNativeAPI(Installer.pageId, Installer.pageName, false, Installer.parentPageNodeId);
+                CreatePageNativeAPI(Installer.pageId, Installer.pageName, false, Guid.Empty);
                 AddControlToPage();
                 PersonalizePage();
             }
@@ -322,7 +322,7 @@ namespace DayOfWeekPersonalization
                                     </p>";
         private static readonly Guid segmentId = new Guid("2E68BB39-9D4E-4D8E-B53A-551B81D2FBA4");
         private static readonly Guid pageId = new Guid("5B9542F9-E0D6-4587-96D4-F91C12532135");
-        private static readonly Guid parentPageNodeId = new Guid("5B9542F9-E0D6-4587-96D4-F91C12532136");
+        //private static readonly Guid parentPageNodeId = new Guid("5B9542F9-E0D6-4587-96D4-F91C12532136");
         public const string UrlNameCharsToReplace = @"[^\w\-\!\$\'\(\)\=\@\d_]+";
         public const string UrlNameReplaceString = "-";
 
