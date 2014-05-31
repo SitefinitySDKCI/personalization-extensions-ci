@@ -46,3 +46,8 @@ function RestoreDatabaseWithMove($databaseServer, $dbName, $restoredDbName, $dbL
     $logName = $dbName+'_log'
     SQLCMD.EXE -S $databaseServer -E -q "exit(RESTORE DATABASE [$restoredDbName] FROM DISK='$dbBakFullPath' WITH MOVE '$dbName' TO '$dbDestinationFullPath', MOVE '$logName' TO '$logDestinationFullPath')"
 }
+
+function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
+{
+    SQLCMD.EXE -S $databaseServer -E -q "USE [master] GO CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbLocation\$dbName.mdf' ), ( FILENAME = N'$dbLocation\$dbName_log.ldf' ) FOR ATTACH; GO"
+}
