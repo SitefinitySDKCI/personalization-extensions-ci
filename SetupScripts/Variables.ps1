@@ -21,7 +21,6 @@ $databaseBackupLocation = $doc.SelectSingleNode("//variables/databaseBackupLocat
 $databaseBackupName = $doc.SelectSingleNode("//variables/databaseBackupName").InnerText
 
 $databaseServer = $doc.SelectSingleNode("//variables/databaseServer").InnerText
-$projectDatabaseName 
 $appPollName = $siteName
 $databaseName = $siteName
 
