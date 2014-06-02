@@ -49,8 +49,24 @@ function RestoreDatabaseWithMove($databaseServer, $dbName, $restoredDbName, $dbL
 
 function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
 {
-    $dbDestinationFullPath = $dbLocation+"\"+$dbName+".mdf"
-    $logDestinationFullPath = $dbLocation+"\"+$dbName+"_log.ldf"
-    $logName = $dbName+'_log'
-    SQLCMD.EXE -S $databaseServer -E -R -q "exit(CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
+    #$dbDestinationFullPath = $dbLocation+"\"+$dbName+".mdf"
+    #$logDestinationFullPath = $dbLocation+"\"+$dbName+"_log.ldf"
+    #$logName = $dbName+'_log'
+    #SQLCMD.EXE -S $databaseServer -E -R -q "exit(CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
+    
+    $mdfFileName = $dbName+".mdf"
+    $ldfFileName = $dbName+"_log.ldf"
+
+    [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.SMO') | out-null 
+    $sqlServerSmo = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server ($databaseServer)
+    $sqlServerSmo.KillAllProcesses($dbName)
+
+    $datafile = [System.IO.Path]::Combine($dbLocation, $mdfFileName)
+    $logfile = [System.IO.Path]::Combine($dbLocation, $ldfFileName)
+
+    $sc = new-object System.Collections.Specialized.StringCollection
+    $sc.Add($datafile) | Out-Null
+    $sc.Add($logfile) | Out-Null
+
+    $sqlServerSmo.AttachDatabase($dbName, $sc)
 }
