@@ -11,8 +11,6 @@ write-output "------- Installing Sitefinity --------"
 
 EnsureDBDeleted $databaseServer $databaseName
 
-# TODO: Move database to build folder
-
 AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
 
 DeleteAllSitesWithSameBinding $defaultWebsitePort
