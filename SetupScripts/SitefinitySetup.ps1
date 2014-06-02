@@ -39,6 +39,7 @@ write-output "Sitefinity successfully deployed."
 function InstallSitefinity()
 {
     $sitefinityWebAppSolution = $projectBuildLocation +"\"+ $projectBuildName
+    "Building solution -----> $sitefinityWebAppSolution"
     "$msBuildExe64 $sitefinityWebAppSolution /t:Build"
     AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
     
