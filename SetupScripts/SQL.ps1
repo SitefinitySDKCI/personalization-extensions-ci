@@ -52,6 +52,6 @@ function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
     $dbDestinationFullPath = $dbLocation+"\"+$dbName+".mdf"
     $logDestinationFullPath = $dbLocation+"\"+$dbName+"_log.ldf"
     $logName = $dbName+'_log'
-    $serverRol = "NT AUTHORITY\NETWORK SERVICE"
-    SQLCMD.EXE -S $databaseServer -E -q "exit(SP_ADDSRVROLEMEMBER '$serverRol', 'sysadmin' CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
+    $serverRole = "JENKINS-CI\sitefinitysdk"
+    SQLCMD.EXE -S $databaseServer -E -q "exit(SP_ADDSRVROLEMEMBER '$serverRole', 'sysadmin' CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
 }
