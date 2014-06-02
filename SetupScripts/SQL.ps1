@@ -60,10 +60,13 @@ function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.SMO') | out-null 
     $sqlServerSmo = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server ($databaseServer)
     $sqlServerSmo.KillAllProcesses($dbName)
-
+    
     $datafile = [System.IO.Path]::Combine($dbLocation, $mdfFileName)
     $logfile = [System.IO.Path]::Combine($dbLocation, $ldfFileName)
 
+    "----->" + $datafile
+    "----->" + $logfile
+    
     $sc = new-object System.Collections.Specialized.StringCollection
     $sc.Add($datafile) | Out-Null
     $sc.Add($logfile) | Out-Null
