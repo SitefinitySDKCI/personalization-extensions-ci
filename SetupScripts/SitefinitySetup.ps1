@@ -11,8 +11,6 @@ write-output "------- Installing Sitefinity --------"
 
 EnsureDBDeleted $databaseServer $databaseName
 
-AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
-
 DeleteAllSitesWithSameBinding $defaultWebsitePort
 
 write-output "Setting up Application pool..."
@@ -40,6 +38,8 @@ write-output "Sitefinity successfully deployed."
 
 function InstallSitefinity()
 {
+    AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
+    
 	$siteId = GetNextWebsiteId
 	write-output "Registering $siteName website with id $siteId in IIS."
 	New-WebSite -Id $siteId -Name $siteName -Port $websitePort -HostHeader localhost -PhysicalPath $projectBuildLocation -ApplicationPool $appPollName -Force
