@@ -46,3 +46,12 @@ function RestoreDatabaseWithMove($databaseServer, $dbName, $restoredDbName, $dbL
     $logName = $dbName+'_log'
     SQLCMD.EXE -S $databaseServer -E -q "exit(RESTORE DATABASE [$restoredDbName] FROM DISK='$dbBakFullPath' WITH MOVE '$dbName' TO '$dbDestinationFullPath', MOVE '$logName' TO '$logDestinationFullPath')"
 }
+
+function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
+{
+    $dbDestinationFullPath = $dbLocation+"\"+$dbName+".mdf"
+    $logDestinationFullPath = $dbLocation+"\"+$dbName+"_log.ldf"
+    $logName = $dbName+'_log'
+    $serverRole = "JENKINS-CI\sitefinitysdk"
+    SQLCMD.EXE -S $databaseServer -E -R -q "exit(CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
+}
