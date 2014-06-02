@@ -55,7 +55,7 @@ function AttachDatabase($databaseServer, $dbName, $restoredDbName, $dbLocation)
     "debug ------> " + $dbDestinationFullPath
     "debug ------> " + $logDestinationFullPath
     
-    SQLCMD.EXE -S $databaseServer -E -R -q "exit(CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
+    $sqlCmdExe -S $databaseServer -E -R -q "exit(CREATE DATABASE [$dbName] ON ( FILENAME = N'$dbDestinationFullPath' ), ( FILENAME = N'$logDestinationFullPath' ) FOR ATTACH)"
     
     #$mdfFileName = $dbName+".mdf"
     #$ldfFileName = $dbName+"_log.ldf"
