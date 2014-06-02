@@ -17,6 +17,7 @@ $websiteUrl = $doc.SelectSingleNode("//variables/websiteUrl").InnerText
 $websitePort = $doc.SelectSingleNode("//variables/websitePort").InnerText
 $projectBackupLocation = $doc.SelectSingleNode("//variables/projectBackupLocation").InnerText
 $projectBuildLocation = $doc.SelectSingleNode("//variables/projectBuildLocation").InnerText
+$projectBuildName = $doc.SelectSingleNode("//variables/projectBuildName").InnerText
 $databaseBackupLocation = $doc.SelectSingleNode("//variables/databaseBackupLocation").InnerText
 $databaseBackupName = $doc.SelectSingleNode("//variables/databaseBackupName").InnerText
 
