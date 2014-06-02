@@ -5,7 +5,7 @@
   <websitePort>3656</websitePort>
   <projectBackupLocation>C:\_EmptyProjects\PersonalizationExtensionsEmptyBackup\SitefinityWebApp</projectBackupLocation>
   <projectBuildLocation>C:\SamplesBuilds\PersonalizationExtensionsTest\SitefinityWebApp</projectBuildLocation>
-  <databaseBackupLocation>SitefinityWebApp\App_Data</databaseBackupLocation>
+  <databaseBackupLocation>C:\SamplesBuilds\PersonalizationExtensionsTest\SitefinityWebApp\App_Data</databaseBackupLocation>
   <databaseBackupName>PersonalizationExtensions</databaseBackupName>
   <databaseServer>.\SQLEXPRESS</databaseServer>
 </variables>
