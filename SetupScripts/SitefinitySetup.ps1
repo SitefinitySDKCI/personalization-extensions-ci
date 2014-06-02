@@ -13,7 +13,7 @@ EnsureDBDeleted $databaseServer $databaseName
 
 # TODO: Move database to build folder
 
-AttachDatabase $databaseServer $databaseBackupName $databaseName $databaseBackupLocation
+RestoreDatabaseWithMove $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
 
 DeleteAllSitesWithSameBinding $defaultWebsitePort
 
