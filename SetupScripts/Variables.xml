@@ -3,9 +3,9 @@
   <siteName>PersonalizationExtensions</siteName>
   <websiteUrl>http://localhost:3656/</websiteUrl>
   <websitePort>3656</websitePort>
-  <projectBackupLocation>C:\_EmptyProjects\PersonalizationExtensionsEmptyBackup\SitefinityWebApp\</projectBackupLocation>
-  <projectBuildLocation>C:\SamplesBuilds\PersonalizationExtensionsTest\SitefinityWebApp\</projectBuildLocation>
-  <databaseBackupLocation>C:\_EmptyProjects\PersonalizationExtensionsEmptyBackup</databaseBackupLocation>
+  <projectBackupLocation>C:\_EmptyProjects\PersonalizationExtensionsEmptyBackup\SitefinityWebApp</projectBackupLocation>
+  <projectBuildLocation>C:\SamplesBuilds\PersonalizationExtensionsTest\SitefinityWebApp</projectBuildLocation>
+  <databaseBackupLocation>C:\SamplesBuilds\PersonalizationExtensionsTest\SitefinityWebApp\App_Data</databaseBackupLocation>
   <databaseBackupName>PersonalizationExtensions</databaseBackupName>
   <databaseServer>.\SQLEXPRESS</databaseServer>
 </variables>
