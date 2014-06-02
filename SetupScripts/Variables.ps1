@@ -25,3 +25,4 @@ $appPollName = $siteName
 $databaseName = $siteName
 
 $aspNetTempFolder = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root"
+$sqlCmdExe = "C:\Program Files\Microsoft SQL Server\110\Tools\Binn\SQLCMD.EXE" 
