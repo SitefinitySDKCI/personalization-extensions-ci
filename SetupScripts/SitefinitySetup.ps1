@@ -38,6 +38,10 @@ write-output "Sitefinity successfully deployed."
 
 function InstallSitefinity()
 {
+    $sitefinityWebAppSolution = $projectBuildLocation +"\"+ $projectBuildName
+    
+    BuildSolution $sitefinityWebAppSolution
+    
     AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
     
 	$siteId = GetNextWebsiteId
@@ -66,3 +70,13 @@ function InstallSitefinity()
 	write-output "----- Sitefinity successfully installed ------"
 }
 
+function BuildSolution($slnFile)
+{
+    $BuildArgs = @{
+         FilePath = $msBuildExe64
+         ArgumentList = $slnFile, "/t:Build"
+         Wait = $true
+     }
+     
+    Start-Process @BuildArgs
+}
