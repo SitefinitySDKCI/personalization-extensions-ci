@@ -40,6 +40,7 @@ function InstallSitefinity()
 {
     $sitefinityWebAppSolution = $projectBuildLocation +"\"+ $projectBuildName
     
+    "Building Sitefinity solution"
     BuildSolution $sitefinityWebAppSolution
     
     AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
@@ -75,6 +76,7 @@ function BuildSolution($slnFile)
     $BuildArgs = @{
          FilePath = $msBuildExe64
          ArgumentList = $slnFile, "/t:Build"
+         RedirectStandardOutput = $true
          Wait = $true
      }
      
