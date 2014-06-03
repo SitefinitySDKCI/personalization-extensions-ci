@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Telerik.WebTestRunner.Server.Attributes;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DayOfWeekPersonalizationIntegrationTests")]
+[assembly: AssemblyTitle("DayOfWeekPersonalizationTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DayOfWeekPersonalizationIntegrationTests")]
+[assembly: AssemblyProduct("DayOfWeekPersonalizationTests")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4fd4328c-1d0a-4b57-95ef-3ab775773158")]
+[assembly: Guid("41b1a2cc-c939-4336-b211-6454b1d4b0d8")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly:IntegrationTests()]
