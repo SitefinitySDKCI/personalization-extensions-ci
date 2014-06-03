@@ -37,7 +37,7 @@ function InstallSitefinity()
 {
     $sitefinityWebAppSolution = $projectBuildLocation +"\"+ $projectBuildName
     
-    "Building Sitefinity solution"
+    write-output "Building Sitefinity solution"
     BuildSolution $sitefinityWebAppSolution
     
     AttachDatabase $databaseServer $databaseName $databaseBackupName $databaseBackupLocation
