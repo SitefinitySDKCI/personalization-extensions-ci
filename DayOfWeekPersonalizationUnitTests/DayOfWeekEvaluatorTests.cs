@@ -10,36 +10,62 @@ namespace DayOfWeekPersonalizationUnitTests
     public class DayOfWeekEvaluatorTests
     {
         [TestMethod]
-        public void TestDayOfWeekEvaluatorReturnsTrueWhenDateTimeIsMondayAndSettingsIsMonday()
+        public void IsMatch_WhenDateTimeMondayAndSettingsMonday_ReturnsTrue()
         {
-            // arrange
             DateTime mondayDate = new DateTime(2014, 6, 2); 
             string mondayString = ((int)mondayDate.DayOfWeek).ToString();
             DayOfWeekEvaluator dayOfWeekEvaluator = new DayOfWeekEvaluator();
 
-            // act
             dayOfWeekEvaluator.CurrentDateTime = mondayDate;
-            bool expectedResult = dayOfWeekEvaluator.IsMatch(mondayString, new PersonalizationTestContext());
+            bool isMatch = dayOfWeekEvaluator.IsMatch(mondayString, new PersonalizationTestContext());
 
-            // assert
-            Assert.IsTrue(expectedResult);
+            Assert.IsTrue(isMatch);
         }
 
         [TestMethod]
-        public void TestDayOfWeekEvaluatorReturnsFalseWhenDateTimeIsMondayAndSettingsIsTuesday()
+        public void IsMatch_WhenDateTimeMondayAndSettingsTuesday_ReturnsFalse()
         {
-            // arrange
             DateTime mondayDate = new DateTime(2014, 6, 2);
             DateTime tuesdayDate = mondayDate.AddDays(1);
             string tuesdayString = ((int)tuesdayDate.DayOfWeek).ToString();
             DayOfWeekEvaluator dayOfWeekEvaluator = new DayOfWeekEvaluator();
 
-            // act
             dayOfWeekEvaluator.CurrentDateTime = mondayDate;
-            bool expectedResult = dayOfWeekEvaluator.IsMatch(tuesdayString, new PersonalizationTestContext());
+            bool isMatch = dayOfWeekEvaluator.IsMatch(tuesdayString, new PersonalizationTestContext());
 
-            // assert
-            Assert.IsFalse(expectedResult);
+            Assert.IsFalse(isMatch);
+        }
+
+        [TestMethod]
+        public void IsMatch_WhenSettingsAreNull_ReturnsFalse()
+        {
+            DayOfWeekEvaluator dayOfWeekEvaluator = new DayOfWeekEvaluator();
+
+            bool isMatch = dayOfWeekEvaluator.IsMatch(null, new PersonalizationTestContext());
+
+            Assert.IsFalse(isMatch);
+        }
+
+        [TestMethod]
+        public void IsMatch_WhenSettingsAreEmpty_ReturnsFalse()
+        {
+            DayOfWeekEvaluator dayOfWeekEvaluator = new DayOfWeekEvaluator();
+
+            bool isMatch = dayOfWeekEvaluator.IsMatch(String.Empty, new PersonalizationTestContext());
+
+            Assert.IsFalse(isMatch);
+        }
+
+        [TestMethod]
+        public void IsMatch_WhenSettingsAreIncorrectDayOfWeek_ReturnsFalse()
+        {
+            string incorectDayOfWeek = "test day of week";
+
+            DayOfWeekEvaluator dayOfWeekEvaluator = new DayOfWeekEvaluator();
+
+            bool isMatch = dayOfWeekEvaluator.IsMatch(incorectDayOfWeek, new PersonalizationTestContext());
+
+            Assert.IsFalse(isMatch);
         }
     }
 }

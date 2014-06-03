@@ -182,7 +182,7 @@ namespace DayOfWeekPersonalization
             {
                 CreatePageNativeAPI(Installer.pageId, Installer.pageName, false, Guid.Empty);
                 AddControlToPage();
-                PersonalizePage();
+                PersonalizePage(Installer.pageId, Installer.segmentId);
             }
         }
 
@@ -193,8 +193,6 @@ namespace DayOfWeekPersonalization
         /// <param name="isHomePage">if set to <c>true</c> sets the page as a home page.</param>
         public static void CreatePageNativeAPI(Guid pageId, string pageName, bool isHomePage, Guid parentPageNodeId)
         {
-            var pageDataId = Guid.NewGuid();
-
             PageManager manager = PageManager.GetManager();
             PageData pageData = null;
             PageNode pageNode = null;
@@ -270,17 +268,17 @@ namespace DayOfWeekPersonalization
         /// <summary>
         /// Creates a personalized page and modifies the existing control.
         /// </summary>
-        public static void PersonalizePage()
+        public static void PersonalizePage(Guid pageId, Guid segmentId)
         {
             PageManager pageManager = PageManager.GetManager();
-            var pageNode = pageManager.GetPageNode(Installer.pageId);
+            var pageNode = pageManager.GetPageNode(pageId);
             if (pageNode != null)
             {
                 var personalizationManager = PersonalizationManager.GetManager();
-                personalizationManager.CreatePersonalizedPage(pageNode.GetPageData().Id, Installer.segmentId);
+                personalizationManager.CreatePersonalizedPage(pageNode.GetPageData().Id, segmentId);
                 personalizationManager.SaveChanges();
 
-                var personalizedPageData = pageManager.GetPageDataList().FirstOrDefault(p => p.PersonalizationSegmentId == Installer.segmentId);
+                var personalizedPageData = pageManager.GetPageDataList().FirstOrDefault(p => p.PersonalizationSegmentId == segmentId);
                 if (personalizedPageData != null)
                 {
                     var draftPage = pageManager.EditPage(personalizedPageData.Id);

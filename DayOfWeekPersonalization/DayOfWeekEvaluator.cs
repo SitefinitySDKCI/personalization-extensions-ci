@@ -59,13 +59,18 @@ namespace DayOfWeekPersonalization
         /// <summary>
         /// Determines if the current user is a match for the given criterion.
         /// </summary>
-        /// <param name="settings">The serialized settings with which the criterion has been configured.</param>
+        /// <param name="settings">The serialized integer value that represents the <see cref="DayOfWeek"/> used as a criterion.</param>
         /// <param name="testContext">Personalization test context populated by the personalization test console.</param>
         /// <returns>
         /// True if the criterion is matched; otherwise false.
         /// </returns>
         public bool IsMatch(string settings, IPersonalizationTestContext testContext)
         {
+            if (string.IsNullOrEmpty(settings))
+            {
+                return false;
+            }
+
             if (settings == this.CurrentDayOfWeek.ToString())
             {
                 return true;
