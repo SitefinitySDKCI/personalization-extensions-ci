@@ -9,7 +9,8 @@ $iisModule = Join-Path $currentPath "\IIS.ps1"
 $sqlModule = Join-Path $currentPath "\SQL.ps1"
 $functionsModule = Join-Path $currentPath "\Functions.ps1"
 $sitefinitySetup = Join-Path $currentPath "\SitefinitySetup.ps1"
-
+$cleanup = Join-Path $currentPath "\Cleanup.ps1"
+ 
 #Website setup properties
 
 $siteName = $doc.SelectSingleNode("//variables/siteName").InnerText

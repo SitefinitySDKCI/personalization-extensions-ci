@@ -1,21 +1,18 @@
 Import-Module WebAdministration
-[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | out-null
+
 $currentPath = Split-Path $script:MyInvocation.MyCommand.Path
 $variables = Join-Path $currentPath "\Variables.ps1"
 . $variables
 . $iisModule
 . $sqlModule
 . $functionsModule
+. $cleanup
 
 write-output "------- Installing Sitefinity --------"
 
-EnsureDBDeleted $databaseServer $databaseName
-
-DeleteAllSitesWithSameBinding $defaultWebsitePort
+ProjectCleanup
 
 write-output "Setting up Application pool..."
-
-Remove-WebAppPool $appPollName -ErrorAction continue
 
 New-WebAppPool $appPollName -Force
 
