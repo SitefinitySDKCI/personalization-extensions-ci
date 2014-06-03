@@ -9,13 +9,9 @@ $variables = Join-Path $currentPath "\Variables.ps1"
 
 write-output "------- Installing Sitefinity --------"
 
-EnsureDBDeleted $databaseServer $databaseName
-
-DeleteAllSitesWithSameBinding $defaultWebsitePort
+ProjectCleanup
 
 write-output "Setting up Application pool..."
-
-Remove-WebAppPool $appPollName -ErrorAction continue
 
 New-WebAppPool $appPollName -Force
 
