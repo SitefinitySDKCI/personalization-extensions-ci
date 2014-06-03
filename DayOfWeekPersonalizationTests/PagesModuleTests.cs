@@ -28,15 +28,6 @@ namespace DayOfWeekPersonalizationTests
             Assert.IsTrue(true);
         }
 
-        [Test]
-        [Category(TestCategories.Sdk)]
-        [Description("A test that fails.")]
-        [Author("SDK")]
-        public void TestThatAlwaysFails()
-        {
-            Assert.IsTrue(false);
-        }
-
         [Test][Category(TestCategories.Sdk)]
         [Description("Verifies that a page can be created using the Native API.")]
         [Author("SDK")]
