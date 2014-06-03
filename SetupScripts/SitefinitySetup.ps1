@@ -1,11 +1,12 @@
 Import-Module WebAdministration
-[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | out-null
+
 $currentPath = Split-Path $script:MyInvocation.MyCommand.Path
 $variables = Join-Path $currentPath "\Variables.ps1"
 . $variables
 . $iisModule
 . $sqlModule
 . $functionsModule
+. $cleanup
 
 write-output "------- Installing Sitefinity --------"
 
