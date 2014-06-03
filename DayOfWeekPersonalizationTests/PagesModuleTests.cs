@@ -19,6 +19,15 @@ namespace DayOfWeekPersonalizationTests
     {
         public static Guid NewPageNodeId = new Guid("5B9542F9-E0D6-4587-96D4-F91C12532235");
 
+        [Test]
+        [Category(TestCategories.Sdk)]
+        [Description("A test that always passes.")]
+        [Author("SDK")]
+        public void TestThatAlwaysPasses()
+        {
+            Assert.IsTrue(true);
+        }
+
         [Test][Category(TestCategories.Sdk)]
         [Description("Verifies that a page can be created using the Native API.")]
         [Author("SDK")]
