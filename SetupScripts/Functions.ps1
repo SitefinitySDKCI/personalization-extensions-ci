@@ -6,6 +6,8 @@ Function CleanDirectory($dir){
 
 function CleanWebsiteDirectory($dir, $retryCount, $appPollName)
 {
+    write-output "Cleaning website directory"
+    
     for ($i=1; $i -le $retryCount; $i++)
     {
         if(Test-Path $dir)
