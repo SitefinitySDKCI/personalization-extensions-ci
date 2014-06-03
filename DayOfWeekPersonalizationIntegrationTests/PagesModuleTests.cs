@@ -11,7 +11,7 @@ using Telerik.Sitefinity.Abstractions;
 using Telerik.Sitefinity.Fluent;
 using Telerik.Sitefinity.Services;
 
-namespace DayOfWeekPersonalizationTests
+namespace DayOfWeekPersonalizationIntegrationTests
 {
     [TestFixture]
     [Description("Integration tests for the Pages module.")]
@@ -28,7 +28,8 @@ namespace DayOfWeekPersonalizationTests
             Assert.IsTrue(true);
         }
 
-        [Test][Category(TestCategories.Sdk)]
+        [Test]
+        [Category(TestCategories.Sdk)]
         [Description("Verifies that a page can be created using the Native API.")]
         [Author("SDK")]
         public void CreatePageNativeAPITestDevGuide()
@@ -39,7 +40,7 @@ namespace DayOfWeekPersonalizationTests
                 PagesModuleTests.DeleteIfTestPageExists(fluent);
                 int initialPagesCount = fluent.Pages().Get().Count();
 
-                Guid newPageId = NewPageNodeId;
+                Guid newPageId = PagesModuleTests.NewPageNodeId;
                 Guid expectedParentPageId = SiteInitializer.CurrentFrontendRootNodeId;
                 string expectedName = "Test name";
                 bool expectedIsHomePage = true;

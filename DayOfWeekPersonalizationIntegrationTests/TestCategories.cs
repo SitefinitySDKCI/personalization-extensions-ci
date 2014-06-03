@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DayOfWeekPersonalizationTests
+namespace DayOfWeekPersonalizationIntegrationTests
 {
-    class TestCategories
+    public class TestCategories
     {
         /// <summary>
         /// Specifies the name of the category of tests related to Sitefinity modules.
