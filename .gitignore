@@ -187,3 +187,5 @@ FakesAssemblies/
 
 # Sitefinity files
 *.lic
+.nuget/NuGet.exe
+PersonalizationExtensions.jmconfig
