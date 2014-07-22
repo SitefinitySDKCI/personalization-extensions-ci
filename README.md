@@ -1,7 +1,7 @@
 Personalization extensions
 ==========================
 
-I am afraid :D
+Crocodile Gena was here.
 
 [![Build Status](http://sdk-jenkins-ci.cloudapp.net/buildStatus/icon?job=Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test)](http://sdk-jenkins-ci.cloudapp.net/job/Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test/)
 
