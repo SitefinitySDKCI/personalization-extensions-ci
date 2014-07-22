@@ -1,7 +1,7 @@
 Personalization extensions
 ==========================
 
-baba4ka
+baba4ka is working
 
 [![Build Status](http://sdk-jenkins-ci.cloudapp.net/buildStatus/icon?job=Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test)](http://sdk-jenkins-ci.cloudapp.net/job/Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test/)
 
