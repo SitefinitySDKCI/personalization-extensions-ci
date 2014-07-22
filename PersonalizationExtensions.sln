@@ -12,35 +12,4 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9A3FE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOfWeekPersonalizationTests", "DayOfWeekPersonalizationTests\DayOfWeekPersonalizationTests.csproj", "{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOfWeekPersonalizationUnitTests", "DayOfWeekPersonalizationUnitTests\DayOfWeekPersonalizationUnitTests.csproj", "{16659AB2-5B86-480A-9C29-6A3B9E22308D}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release Pro|Any CPU = Release Pro|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Release Pro|Any CPU.ActiveCfg = Release|Any CPU
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Release Pro|Any CPU.Build.0 = Release|Any CPU
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64B41B96-C135-4C4D-A421-D1166CC8CA34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Release Pro|Any CPU.ActiveCfg = Release|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Release Pro|Any CPU.Build.0 = Release|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{252B37F2-0DC3-47B0-BDB9-A3831EFC94AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Release Pro|Any CPU.ActiveCfg = Release|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Release Pro|Any CPU.Build.0 = Release|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16659AB2-5B86-480A-9C29-6A3B9E22308D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC-}") = "DayOfWeekPersonalizationUnitTests", "DayOfWeekPersonalizationUnitTests\DayOfWeekPersonalizationUnitTests.csproj", "{16659AB2-5B86-480A-9C29-6A3B9E22308D}"
