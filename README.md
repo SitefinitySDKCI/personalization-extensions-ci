@@ -7,7 +7,6 @@ testing0000
 
 Sitefinity’s personalization feature gives developers the power to create separate experiences for users grouped by a certain criteria. This sample demonstrates a scenario where you would want to personalize a page according to the day of the week. To achieve this functionality we will extend the default behavior of Sitefinity's personalization module to fit our needs.
 
-
 ### Requirements
 
 * Sitefinity license
@@ -25,3 +24,6 @@ You must have a running Sitefinity project that has an installed personalization
 2. Build the sample solution
 3. Add a reference to the *DayOfWeekPersonalization.dll* file in your project
 4. Build and run your Sitefinity application
+
+testing 0002356+
+56+
