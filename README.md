@@ -1,7 +1,7 @@
 Personalization extensions
 ==========================
 
-testing00007878
+testing00007878 99
 
 [![Build Status](http://sdk-jenkins-ci.cloudapp.net/buildStatus/icon?job=Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test)](http://sdk-jenkins-ci.cloudapp.net/job/Telerik.Sitefinity.Samples.PersonalizationExtensions.CI.test/)
 
