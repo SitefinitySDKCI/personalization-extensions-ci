@@ -23,4 +23,5 @@ You must have a running Sitefinity project that has an installed personalization
 3. Add a reference to the *DayOfWeekPersonalization.dll* file in your project
 4. Build and run your Sitefinity application
 
-testing 000
+testing 0002356+
+56+
