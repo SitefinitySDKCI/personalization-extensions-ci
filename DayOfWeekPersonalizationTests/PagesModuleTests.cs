@@ -13,6 +13,7 @@ using Telerik.Sitefinity.Services;
 
 namespace DayOfWeekPersonalizationTests
 {
+    //courage :p
     [TestFixture]
     [Description("Integration tests for the Pages module.")]
     public class PagesModuleTests
